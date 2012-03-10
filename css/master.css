@@ -122,6 +122,14 @@ body {
 	text-align: center;
 }
 
+#fish {
+	position: absolute;
+	top: 7px;
+	right: 8px;
+	-webkit-animation: glowForever 2.2s infinite;
+	-moz-animation: glowForever 2.2s infinite;
+}
+
 #logo {
 	padding-top: 10px;
 	background: rgba(165,191,0,.5);
@@ -196,4 +204,10 @@ body {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
+}
+
+@-webkit-keyframes glowForever {
+    from { opacity: 1;}
+    50% { opacity: 0.3;}
+    to { opacity: 1;}
 }

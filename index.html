@@ -8,26 +8,46 @@
 -->
 
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>Dreadful Fish</title>
 </head>
 <body>
-	<div id="name">
-	<h1>DreadfulFish</h1>
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript">
-		var dict = 'file://localhost/Users/waltercarvalho/dev/git/DreadfulFish/lexicon.txt';
-		var file = '';
-		var output = '';
-		
-		$.get(file, function(data){
-		    $("#in").val(data); // where in is the ID of the textarea.
-		})
-		
-    </script>
-		<p><textarea id="in" rows="8" cols="40"></textarea></p>
-		<p><textarea name="output" id="readhere" rows="8" cols="40"></textarea></p>
-	<p><i>&#8226; DFishTeam</i></p>
+	<div id="container">
+		<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-text="Just used DreadfulFish, pretty nifty." data-hashtags="DreadfulFish">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
+		<div class="cont" id="logo">
+			<p id="logotop" class="logo">DreadfulFish</p>
+		</div>
+		<div class="cont" id="can">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+		// 	var dict = 'file://localhost/Users/waltercarvalho/dev/git/DreadfulFish/lexicon.txt';
+		// 	var file = '';
+		// 	var output = '';
+		// 
+		// 	$.get(file, function(data){
+		// 	    $("#input").val(data); // where in is the ID of the textarea.
+		// 	})
+		// 
+		</script>
+			<p>It's simple, select either you want to shorten your text or expand it.</p>
+			<p><textarea class="textboxes" id="input" placeholder="Insert your text here..." rows="8" cols="40"></textarea></p>
+			<p><textarea class="textboxes" id="output" placeholder="... and see the results here." rows="8" cols="40"></textarea></p>
+			<button class="sbutton" type="button">Convert</button>
+		</div>
+	</div>
+	
+	<div id="foot">
+		<div class="cont" id="tin">
+			<h3>DreadfulFish.</h3>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			<br/>
+			<h6><i><p><a href="https://twitter.com/rob_hawkins">@rob_hawkins</a></p></i></h6>
+			<h6><i><p><a href="http://www.twitter.com/waltercfiho">@waltercfilho</a></p></i></h6>
+			<h6><i>&#8226; carefully handcrafted by DFishTeam</i></h6>
+		</div>
 	</div>
 </body>
 </html>

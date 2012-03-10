@@ -12,6 +12,23 @@
 	<title>Dreadful Fish</title>
 </head>
 <body>
-	
+	<h1>DreadfulFish</h1>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		var dict = 'file://localhost/Users/waltercarvalho/dev/git/DreadfulFish/lexicon.txt';
+		var file = '';
+		var output = '';
+		
+		$.get(file, function(data){
+		    $("#in").val(data); // where in is the ID of the textarea.
+		})
+		
+		
+    </script>
+	<div id="tin">
+		<textarea id="in" rows="8" cols="40"></textarea>
+		<textarea name="output" id="readhere" rows="8" cols="40"></textarea>
+	</div>
+	<p><i>&#8226; DFishTeam</i></p>
 </body>
 </html>

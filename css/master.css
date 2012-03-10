@@ -147,9 +147,37 @@ body {
 
 }
 
-.sbutton {
+.sbutton, .sbutton:visited {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 0px 0px;
-	background-color: #EEE;
+	background-color: #DDD;
+	border: 1px solid #999;
+	color: #666;
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, Sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 2px 6px;
+	height: 28px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.sbutton:hover {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 0px 0px;
+	background-color: #FFF;
+	border: 1px solid #999;
+	color: #666;
+	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, Sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 2px 6px;
+	height: 28px;
+}
+
+.sbutton:active {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 0px 0px 0px;
+	background-color: #AAA;
 	border: 1px solid #999;
 	color: #666;
 	font-family: 'Lucida Grande', Tahoma, Verdana, Arial, Sans-serif;
@@ -178,11 +206,10 @@ body {
 	text-align: left;
 	width: 500px;
 	margin: 0 auto;
-	line-height: 1.1;
+	line-height: 1.9;
 }
 
 #credits {
-	margin-top: 140px;
 	font-family: Georgia, serif;
 	text-align: center;
 	font-size: 13px;

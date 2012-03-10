@@ -12,4 +12,4 @@ function findReplace(matchList, switchList, text){
 	}
 	console.log(text)
 	return text;
-} 
+}

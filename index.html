@@ -10,51 +10,70 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="shortcut icon" href="favicon.ico" />	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<script src="wordCount.js" type="text/javascript"></script>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<title>• DreadfulFish</title>
+	<title>• DreadfulFish Beta</title>
 </head>
 <body>
 	<div id="container">
-		<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-text="Just used DreadfulFish, pretty nifty." data-hashtags="DreadfulFish">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
+		<div id="twitter">
+			<script>
+			$(document).ready(function(){
+			    $('a[data-text]').each(function(){
+			      $(this).attr('data-text', "DreadfulFish is awesome.");
+			    });
+			    $.getScript('http://platform.twitter.com/widgets.js');
+			});
+			</script>
+
+			<a href="http://twitter.com/share"
+			    class="twitter-share-button"
+			    data-text="This is what we want to change dynamically"
+			    data-count="vertical" data-via="waltercfilho">Tweet</a>
+			<!-- moved to the js above <script type="text/javascript"
+			    src="http://platform.twitter.com/widgets.js"></script> -->
+		</div>
+
 		<div class="cont" id="logo">
-			<img id="fish" src="css/logo.png" alt="some_text" width="45" height="45" />
+			<img id="fish" src="css/logo.png" alt="AngleFish" width="45" height="45" />
 			<p id="logotop" class="logo">DreadfulFish</p>
 		</div>
 		<div class="cont" id="can">
 		<script type="text/javascript" src="jquery.js"></script>
-		<script type="text/javascript">
-			// var dict = 'file://localhost/Users/waltercarvalho/dev/git/DreadfulFish/lexicon.txt';
-			// var file = '';
-			// var output = '';
-			// 		
-			// $.get(file, function(data){
-			//     $("#input").val(data); // where in is the ID of the textarea.
-			// })
-			// 		
-		</script>
 		<script src="dreadfulfish.js" type="text/javascript"></script>
 		<script type="text/javascript" charset="utf-8">
 			function shortToLong(){
-				var words = " "+document.getElementById("input").value;
+				var words = document.getElementById("input").value;
 				var result = findReplace(shorts, longs, words);
 				console.log(result)
 				document.getElementById("output").value = result;
 			}
 			
 			function longToShort(){
-				var words = " "+document.getElementById("input").value + " ";
+				var words = document.getElementById("input").value;
 				var result = findReplace(longs, shorts, words);
 				console.log(result)
 				document.getElementById("output").value = result;
 			}
 		</script>
+			<form>
 			<p>It's simple, select either you want to shorten your text or expand it.</p>
 			<p><textarea class="textboxes" id="input" placeholder="Insert your text here..." rows="8" cols="40"></textarea></p>
+			<p><em><span class="counter" id="counter"></span></em></p>
 			<p><textarea class="textboxes" id="output" placeholder="... and see the results here." rows="8" cols="40"></textarea></p>
-			<button class="sbutton" value="GET" type="button" onClick="shortToLong()">Expand</button>
-			<button class="sbutton" value="GET" type="button" onClick="longToShort()">Shorten</button>
+			<p><em><span class="counter" id="counter1"></span></em></p>
+			<script>
+			function totalWords(){
+				var totalwords = document.getElementById("output").value.split(' ').length;
+				totalwords -= 2;
+				$("#counter1").html("").html(totalwords);
+			}
+			</script>
+			<button class="sbutton" value="GET" type="button" onClick="shortToLong(); totalWords();">Expand</button>
+			<button class="sbutton" value="GET" type="button" onClick="longToShort(); totalWords();">Shorten</button>
+			</form>
 		</div>
 	</div>
 	

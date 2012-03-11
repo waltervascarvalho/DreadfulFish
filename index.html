@@ -21,7 +21,7 @@
 			<script>
 			$(document).ready(function(){
 			    $('a[data-text]').each(function(){
-			      $(this).attr('data-text', "DreadfulFish is awesome.");
+			      $(this).attr('data-text', "DreadfulFish is awesome. I just made my text "+eff+"% more efficient.");
 			    });
 			    $.getScript('http://platform.twitter.com/widgets.js');
 			});
@@ -65,13 +65,14 @@
 			<script src="wordCount.js" type="text/javascript"></script>
 			<script>
 		
+			var eff;
+			
 			function totalWords(){
-				var totalwords = document.getElementById("output").value.split(' ').length;
-				totalwords -= 2;
-				$("#counter1").html("").html(totalwords);
-				var c = totalwords/total_start;
-				console.log(total_start);
-				console.log(c);
+				var words_end = document.getElementById("output").value.split(' ').length;
+				words_end -= 2;
+				$("#counter1").html("").html(words_end);
+				eff = (words_end/words_start)*100;
+				return eff;
 			}
 			</script>
 			<button class="sbutton" value="GET" type="button" onClick="shortToLong(); totalWords();">Expand</button>

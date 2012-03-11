@@ -2,6 +2,8 @@ $(document).ready(function()
 {
     //set max length
     var max_length = 0;
+
+	var words_start;
  
     //load in max characters when page loads
     $("#counter").html(max_length);
@@ -24,15 +26,15 @@ whenkeydown = function(max_length)
 			
  
             //set number of words.
-            var numofwords = this.value.split(/\S+/g).length;
+            numofwords = this.value.split(/\S+/g).length;
  
             //set the number of total words.
-            var words_total = max_length + numofwords;
+            words_start = max_length + numofwords;
 
 			//set the total of the text into the counter span
-			$("#counter").html("").html(words_total).css("color", "#777");
+			$("#counter").html("").html(words_start).css("color", "#777");
 			
-			return numofwords
+			return words_start;
         }
     });
 }

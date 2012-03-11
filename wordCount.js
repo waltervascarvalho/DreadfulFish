@@ -30,7 +30,7 @@ whenkeydown = function(max_length)
             var words_total = max_length + numofwords;
 
 			//set the total of the text into the counter span
-			$("#counter").html("").html(words_total).css("color", "#D3D3D3");
+			$("#counter").html("").html(words_total).css("color", "#777");
 
         }
     });

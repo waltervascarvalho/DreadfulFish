@@ -31,7 +31,8 @@ whenkeydown = function(max_length)
 
 			//set the total of the text into the counter span
 			$("#counter").html("").html(words_total).css("color", "#777");
-
+			
+			return words_total;
         }
     });
 }

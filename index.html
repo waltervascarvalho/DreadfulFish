@@ -13,7 +13,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<script src="wordCount.js" type="text/javascript"></script>
-	<script src="wordCount1.js" type="text/javascript"></script>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>• DreadfulFish Beta</title>
 </head>
@@ -33,14 +32,14 @@
 		<script src="dreadfulfish.js" type="text/javascript"></script>
 		<script type="text/javascript" charset="utf-8">
 			function shortToLong(){
-				var words = " "+document.getElementById("input").value;
+				var words = document.getElementById("input").value;
 				var result = findReplace(shorts, longs, words);
 				console.log(result)
 				document.getElementById("output").value = result;
 			}
 			
 			function longToShort(){
-				var words = " "+document.getElementById("input").value + " ";
+				var words = document.getElementById("input").value;
 				var result = findReplace(longs, shorts, words);
 				console.log(result)
 				document.getElementById("output").value = result;
@@ -52,8 +51,15 @@
 			<p><em><span class="counter" id="counter"></span></em></p>
 			<p><textarea class="textboxes" id="output" placeholder="... and see the results here." rows="8" cols="40"></textarea></p>
 			<p><em><span class="counter" id="counter1"></span></em></p>
-			<button class="sbutton" value="GET" type="button" onClick="shortToLong()">Expand</button>
-			<button class="sbutton" value="GET" type="button" onClick="longToShort()">Shorten</button>
+			<script>
+			function totalWords(){
+				var totalwords = document.getElementById("output").value.split(' ').length;
+				totalwords -= 2;
+				$("#counter1").html("").html(totalwords);
+			}
+			</script>
+			<button class="sbutton" value="GET" type="button" onClick="shortToLong(); totalWords();">Expand</button>
+			<button class="sbutton" value="GET" type="button" onClick="longToShort(); totalWords();">Shorten</button>
 			</form>
 		</div>
 	</div>

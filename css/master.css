@@ -209,6 +209,15 @@ a:hover {
 	font-family: Georgia;
 }
 
+form p {
+	margin: 8px;
+}
+
+.counter {
+	position:relative;
+	right: -213px;
+}
+
 #foot {
 	height: 400px;
 	border-top: 12px solid rgba(0,0,0,.3);

@@ -394,6 +394,7 @@ h2,h3 {
 /* HTML5 Boilerplate */
 /* End */
 /* DreadfulFish — Style! */
+
 body {
 	background: rgba(165,191,0,.5);
 }
@@ -412,7 +413,6 @@ body {
 	position: absolute;
 	top: 7px;
 	right: 8px;
-
 	-webkit-animation: glowForever 2.2s infinite;
 	-moz-animation: glowForever 2.2s infinite;
 	-ms-animation: glowForever 2.2s infinite;

@@ -42,45 +42,18 @@
 		<div class="cont" id="can">
 		<script type="text/javascript" src="jquery.js"></script>
 		<script src="dreadfulfish.js" type="text/javascript"></script>
-		<script type="text/javascript" charset="utf-8">
-		
-			function shortToLong(){
-				var words = document.getElementById("input").value;
-				var result = findReplace(shorts, longs, words);
-				document.getElementById("output").value = result;
-			}
-			
-			function longToShort(){
-				var words = document.getElementById("input").value;
-				var result = findReplace(longs, shorts, words);
-				document.getElementById("output").value = result;
-			}
-		</script>
+		<script src="wordCount.js" type="text/javascript"></script>
 			<form>
-			<p>It's simple, enter your text and select either you want to shorten your text or expand it.</p>
-			<p><textarea class="textboxes" id="input" placeholder="Insert your text here..." rows="8" cols="40"></textarea></p>
-			<p><em><span class="counter" id="counter"></span></em></p>
-			<p><textarea class="textboxes" id="output" placeholder="... and see the results here." rows="8" cols="40"></textarea></p>
-			<p><em><span class="counter" id="counter1"></span></em></p>
-			<script src="wordCount.js" type="text/javascript"></script>
-			<script>
-		
-			var eff;
-			
-			function totalWords(){
-				var words_end = document.getElementById("output").value.split(' ').length;
-				words_end -= 2;
-				$("#counter1").html("").html(words_end);
-				eff = (words_end/words_start)*100;
-				return eff;
-			}
-			</script>
-			<button class="sbutton" value="GET" type="button" onClick="shortToLong(); totalWords();">Expand</button>
-			<button class="sbutton" value="GET" type="button" onClick="longToShort(); totalWords();">Shorten</button>
+				<p>It's simple, enter your text and select either you want to shorten your text or expand it.</p>
+				<p><textarea class="textboxes" id="input" placeholder="Insert your text here..." rows="8" cols="40"></textarea></p>
+				<p><em><span class="counter" id="counter"></span></em></p>
+				<p><textarea class="textboxes" id="output" placeholder="... and see the results here." rows="8" cols="40"></textarea></p>
+				<p><em><span class="counter" id="counter1"></span></em></p>
+				<button class="sbutton" value="GET" type="button" onClick="shortToLong(); totalWords();">Expand</button>
+				<button class="sbutton" value="GET" type="button" onClick="longToShort(); totalWords();">Shorten</button>
 			</form>
 		</div>
 	</div>
-	
 	<div id="foot">
 		<div class="cont" id="tin">
 			<h3>DreadfulFish.</h3>
@@ -98,4 +71,15 @@
 		</div>
 	</div>
 </body>
+<script>		
+	var eff;
+	
+	function totalWords(){
+		var words_end = document.getElementById("output").value.split(' ').length;
+		words_end -= 2;
+		$("#counter1").html("").html(words_end);
+		eff = (words_end/words_start)*100;
+		return eff;
+	}
+</script>
 </html>
